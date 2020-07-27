@@ -1,6 +1,6 @@
 class StockItemsController < ApplicationController
   def index
-    render_200(store_finder.stock_items.page(params[:page]))
+    actions_handler(action: :index, resource: store_finder.stock_items)
   end
 
   def create

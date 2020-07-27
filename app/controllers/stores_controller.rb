@@ -1,6 +1,6 @@
 class StoresController < ApplicationController
   def index
-    render_200(Store.page(params[:page]))
+    actions_handler(action: :index, resource: Store)
   end
 
   def create

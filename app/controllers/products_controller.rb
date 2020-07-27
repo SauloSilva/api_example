@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   def index
-    render_200(Product.page(params[:page]))
+    actions_handler(action: :index, resource: Product)
   end
 
   def create

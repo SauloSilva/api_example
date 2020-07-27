@@ -3,12 +3,17 @@ class ApplicationController < ActionController::API
 
   def actions_handler(action:, resource:, attrs: {})
     {
+      :index => records_get(resource),
       :save => record_save(resource),
       :update => record_update(resource, attrs),
       :destroy => record_destroy(resource),
       :increase => record_increase(resource, attrs),
       :decrease => record_decrease(resource, attrs),
     }.fetch(action, -> { nil }).call
+  end
+
+  def records_get(resource)
+    -> { render_200(resource.page(params[:page])) }
   end
 
   def record_save(resource)
