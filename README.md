@@ -1,24 +1,47 @@
-# README
+## README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Esta é uma aplicação simples de exemplo de como construir uma API em Rails.
+Abaixo você encotrará vários itens para auxiliá-lo a executar esse projeto
 
-Things you may want to cover:
+## Pré requisitos
 
-* Ruby version
+Ter instalado na máquina os seguintes recursos com suas respectivas versões:
 
-* System dependencies
+- Ruby `2.7.1`
+- Postgres `11.1`
 
-* Configuration
+## Instalação
 
-* Database creation
+Depois de obter todos os [pré requisitos](#pré-requisitos), basta executar os seguintes comandos na sequência:
 
-* Database initialization
+1. `gem install pg -v '1.2.3'`
+2. `bin/setup`
 
-* How to run the test suite
+Após isso, execute:
 
-* Services (job queues, cache servers, search engines, etc.)
+`rails s`
 
-* Deployment instructions
+Pronto agora é baixar a [collection de endpoints](#) e os environments de [development]() e [production]() e importar em seu POSTMAN
 
-* ...
+## Testes
+
+Para executar os testes é necessário ter os [pré requisitos](#pré-requisitos) e também ter finalizado a [instalação](#instalação) das dependências com sucesso.
+
+Sendo assim, agora é so executar o seguinte comando:
+
+`rspec`
+
+## Servidor
+
+A API foi hospedada no heroku.
+Esta [neste link](https://api-example-challenge.herokuapp.com).
+
+## Prints das telas
+
+**Exemplo de uma request via POSTMAN**
+
+![]()
+
+**Demostração da suíte com coverage 100%**
+
+![]()
