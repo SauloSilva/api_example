@@ -16,9 +16,9 @@ ActiveRecord::Schema.define(version: 2020_07_26_165520) do
   enable_extension "plpgsql"
 
   create_table "products", force: :cascade do |t|
-    t.string "name"
+    t.string "name", null: false
     t.string "description"
-    t.decimal "price", precision: 9, scale: 2, default: "0.0"
+    t.decimal "price", precision: 9, scale: 2
     t.decimal "tax", precision: 9, scale: 2, default: "0.0"
     t.decimal "shipping", precision: 9, scale: 2, default: "0.0"
     t.datetime "created_at", precision: 6, null: false
@@ -27,8 +27,8 @@ ActiveRecord::Schema.define(version: 2020_07_26_165520) do
   end
 
   create_table "stock_items", force: :cascade do |t|
-    t.bigint "store_id"
-    t.bigint "product_id"
+    t.bigint "store_id", null: false
+    t.bigint "product_id", null: false
     t.integer "quantity"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -38,7 +38,8 @@ ActiveRecord::Schema.define(version: 2020_07_26_165520) do
   end
 
   create_table "stores", force: :cascade do |t|
-    t.string "name"
+    t.string "name", null: false
+    t.string "address"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["name"], name: "index_stores_on_name", unique: true

@@ -1,0 +1,17 @@
+{
+  "type": "object",
+  "required": ["errors"],
+  "properties": {
+    "errors" : {
+      "type" : "array",
+      "properties": {
+        "type" : "object",
+        "required": ["source", "detail"],
+        "properties" : {
+          "source" : { "type" : "object" },
+          "detail" : { "type" : "string" }
+        }
+      }
+    }
+  }
+}

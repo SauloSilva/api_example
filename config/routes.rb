@@ -1,3 +1,14 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  resources :stores, only: [:index, :create, :update, :destroy], param: :store_id do
+    member do
+      resources :stock_items, only: [:index, :create, :update, :destroy] do
+        member do
+          post :increase
+          post :decrease
+        end
+      end
+    end
+  end
+
+  resources :products, only: [:index, :create, :update, :destroy]
 end

@@ -1,8 +1,8 @@
 class CreateStockItems < ActiveRecord::Migration[6.0]
   def change
     create_table :stock_items do |t|
-      t.references :store, index: true
-      t.references :product, index: true
+      t.references :store, null: false, index: true
+      t.references :product, null: false, index: true
       t.integer :quantity
       t.timestamps
     end

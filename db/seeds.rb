@@ -6,24 +6,18 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-products_attrs =  [
-                    { name: 'Lápis', description: 'lápis preto', price: 1.99, tax: 0, shipping: 0 },
-                    { name: 'Caneta', description: 'caneta azul', price: 3.5, tax: 0.34, shipping: 5 },
-                    { name: 'Estojo', description: 'estojo verde', price: 10, tax: 0.01, shipping: 5 }
-                  ]
+require 'faker'
 
-stores_attrs =  [
-                  { name: 'Loja da esquina' },
-                  { name: 'Livraria do zé' }
-                ]
-
+products_attrs = 3.times.map { FactoryBot.attributes_for(:product) }
 Product.create(products_attrs)
+
+stores_attrs = 3.times.map { FactoryBot.attributes_for(:store) }
 Store.create(stores_attrs)
 
 stock_items_atttr = [
-                      { product: Product.first, store: Store.first, quantity: 0 },
-                      { product: Product.second, store: Store.second, quantity: 10 },
-                      { product: Product.third, store: Store.first, quantity: 20 }
+                      { product: Product.order('RANDOM()').first, store: Store.order('RANDOM()').first, quantity: rand(0..1000) },
+                      { product: Product.order('RANDOM()').first, store: Store.order('RANDOM()').first, quantity: rand(0..1000) },
+                      { product: Product.order('RANDOM()').first, store: Store.order('RANDOM()').first, quantity: rand(0..1000) }
                     ]
 
 StockItem.create(stock_items_atttr)

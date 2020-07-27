@@ -5,4 +5,13 @@ class StockItem < ApplicationRecord
 
   # Validations
   validates :quantity, presence: true, numericality: { greater_than_or_equal_to: 0 }
+  validates :product_id, uniqueness: { scope: :store_id }
+
+  def increase(qtt)
+    update(quantity: quantity + qtt.to_i.abs)
+  end
+
+  def decrease(qtt)
+    update(quantity: quantity - qtt.to_i.abs)
+  end
 end
