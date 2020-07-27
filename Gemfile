@@ -28,12 +28,12 @@ gem 'bootsnap', '>= 1.4.2', require: false
 # gem 'rack-cors'
 
 gem 'faker', '2.13.0'
+gem 'factory_bot_rails', '6.1.0'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec', '3.9.0'
   gem 'rspec-rails', '4.0.1'
-  gem 'factory_bot_rails', '6.1.0'
   gem 'shoulda-matchers', '4.3.0'
   gem 'rails-controller-testing', '1.0.5'
   gem 'database_cleaner', '1.8.5'
