@@ -3,23 +3,23 @@
 pt-BR:
   models_and_attributes: &models_and_attributes
     models:
-      product: &product
-        one: Produto
-        other: Produtos
+      stock_item: &stock_item
+        one: Estoque
+        other: Estoques
     attributes:
-      product: &product
-        name: Nome
-        description: Descrição
-        price: Preço
-        tax: Taxa
-        shipping: Taxa de entrega
+      stock_item: &stock_item
+        quantity: Quantidade
+        product: Produto
+        product_id: Produto
+        store: Loja
+        store_id: Loja
         created_at: Criado em
         update_at: Atualizado em
 
   helpers:
     label:
-      product:
-        <<: *product
+      stock_item:
+        <<: *stock_item
 
   activerecord:
     <<: *models_and_attributes

@@ -3,23 +3,20 @@
 pt-BR:
   models_and_attributes: &models_and_attributes
     models:
-      product: &product
-        one: Produto
-        other: Produtos
+      store: &store
+        one: Loja
+        other: Lojas
     attributes:
-      product: &product
+      store: &store
         name: Nome
-        description: Descrição
-        price: Preço
-        tax: Taxa
-        shipping: Taxa de entrega
+        address: Endereço
         created_at: Criado em
         update_at: Atualizado em
 
   helpers:
     label:
-      product:
-        <<: *product
+      store:
+        <<: *store
 
   activerecord:
     <<: *models_and_attributes
