@@ -117,13 +117,72 @@
 					}
 				},
 				"url": {
-					"raw": "{{domain}}/products/2",
+					"raw": "{{domain}}/products/1",
 					"host": [
 						"{{domain}}"
 					],
 					"path": [
 						"products",
-						"2"
+						"1"
+					]
+				},
+				"description": "Altera produto"
+			},
+			"response": [
+				{
+					"name": "Default",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "/products/:id",
+							"path": [
+								"products",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id"
+								}
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "/products/:id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{domain}}/products/1",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"products",
+						"1"
 					]
 				},
 				"description": "Altera produto"
@@ -168,13 +227,13 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "{{domain}}/products/7",
+					"raw": "{{domain}}/products/1",
 					"host": [
 						"{{domain}}"
 					],
 					"path": [
 						"products",
-						"7"
+						"1"
 					]
 				},
 				"description": "Deleta produto"
@@ -320,13 +379,66 @@
 					}
 				},
 				"url": {
-					"raw": "{{domain}}/stores/4",
+					"raw": "{{domain}}/stores/1",
 					"host": [
 						"{{domain}}"
 					],
 					"path": [
 						"stores",
-						"4"
+						"1"
+					]
+				},
+				"description": "Lista loja com paginação"
+			},
+			"response": [
+				{
+					"name": "Default",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "/stores",
+							"path": [
+								"stores"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "/stores/:id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"foo333\",\n    \"address\": \"rua bar\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{domain}}/stores/1",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"stores",
+						"1"
 					]
 				},
 				"description": "Lista loja com paginação"
@@ -370,13 +482,13 @@
 					}
 				},
 				"url": {
-					"raw": "{{domain}}/stores/4",
+					"raw": "{{domain}}/stores/1",
 					"host": [
 						"{{domain}}"
 					],
 					"path": [
 						"stores",
-						"4"
+						"1"
 					]
 				},
 				"description": "Lista loja com paginação"
@@ -534,7 +646,7 @@
 					}
 				},
 				"url": {
-					"raw": "{{domain}}/stores/1/stock_items/4",
+					"raw": "{{domain}}/stores/1/stock_items/1",
 					"host": [
 						"{{domain}}"
 					],
@@ -542,7 +654,7 @@
 						"stores",
 						"1",
 						"stock_items",
-						"4"
+						"1"
 					]
 				},
 				"description": "Altera produto em uma loja"
@@ -594,7 +706,7 @@
 					}
 				},
 				"url": {
-					"raw": "{{domain}}/stores/1/stock_items/4/increase",
+					"raw": "{{domain}}/stores/1/stock_items/1/increase",
 					"host": [
 						"{{domain}}"
 					],
@@ -602,7 +714,7 @@
 						"stores",
 						"1",
 						"stock_items",
-						"4",
+						"1",
 						"increase"
 					]
 				},
@@ -655,7 +767,7 @@
 					}
 				},
 				"url": {
-					"raw": "{{domain}}/stores/1/stock_items/4/decrease",
+					"raw": "{{domain}}/stores/1/stock_items/1/decrease",
 					"host": [
 						"{{domain}}"
 					],
@@ -663,7 +775,7 @@
 						"stores",
 						"1",
 						"stock_items",
-						"4",
+						"1",
 						"decrease"
 					]
 				},
@@ -711,7 +823,7 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "{{domain}}/stores/1/stock_items/4",
+					"raw": "{{domain}}/stores/1/stock_items/1",
 					"host": [
 						"{{domain}}"
 					],
@@ -719,7 +831,7 @@
 						"stores",
 						"1",
 						"stock_items",
-						"4"
+						"1"
 					]
 				},
 				"description": "Deleta produto em uma loja"

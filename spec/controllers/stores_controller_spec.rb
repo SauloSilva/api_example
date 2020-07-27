@@ -14,6 +14,17 @@ RSpec.describe StoresController, type: :controller do
     end
   end
 
+  describe 'GET #show' do
+    context "success" do
+      it "returns list of stores" do
+        get :show, params: { store_id: store.id }
+
+        expect(response.status).to eq 200
+        expect(response).to match_response_schema(:store)
+      end
+    end
+  end
+
   describe 'POST #create' do
     context "success" do
       it "returns object has been created" do

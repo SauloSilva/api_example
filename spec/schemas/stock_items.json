@@ -10,8 +10,72 @@
         "properties" : {
           "id" : { "type" : "string" },
           "type" : { "type" : "string" },
-          "attributes" : { "type" : "object" },
-          "relationships" : { "type" : "object" }
+          "attributes" : {
+            "type" : "object",
+            "required": ["product", "store", "quantity"],
+            "properties" : {
+              "quantity" : { "type" : "integer" },
+              "store" : {
+                "type" : "object",
+                "required": ["id", "name", "address", "created_at", "updated_at"],
+                "properties" : {
+                  "id" : { "type" : "integer" },
+                  "name" : { "type" : "string" },
+                  "address" : { "type" : "string" },
+                  "created_at" : { "type" : "string" },
+                  "updated_at" : { "type" : "string" }
+                }
+              },
+              "product" : {
+                "type" : "object",
+                "required": ["id", "name", "description", "price", "tax", "shipping", "created_at", "updated_at"],
+                "properties" : {
+                  "id" : { "type" : "integer" },
+                  "name" : { "type" : "string" },
+                  "description" : { "type" : "string" },
+                  "price" : { "type" : "string" },
+                  "tax" : { "type" : "string" },
+                  "shipping" : { "type" : "string" },
+                  "created_at" : { "type" : "string" },
+                  "updated_at" : { "type" : "string" }
+                }
+              }
+            }
+          },
+          "relationships" : {
+            "type" : "object",
+            "required": ["product", "store"],
+            "properties" : {
+              "product" : {
+                "type" : "object",
+                "required": ["data"],
+                "properties" : {
+                  "data" : {
+                    "type" : "object",
+                    "required": ["id", "type"],
+                    "properties" : {
+                      "id" : { "type": "string" },
+                      "type" : { "type": "string" }
+                    }
+                  }
+                }
+              },
+              "store" : {
+                "type" : "object",
+                "required": ["data"],
+                "properties" : {
+                  "data" : {
+                    "type" : "object",
+                    "required": ["id", "type"],
+                    "properties" : {
+                      "id" : { "type": "string" },
+                      "type" : { "type": "string" }
+                    }
+                  }
+                }
+              }
+            }
+          }
         }
       }]
     },

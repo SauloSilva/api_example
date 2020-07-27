@@ -3,6 +3,10 @@ class StoresController < ApplicationController
     actions_handler(action: :index, resource: Store)
   end
 
+  def show
+    actions_handler(action: :show, resource: store_finder)
+  end
+
   def create
     actions_handler(action: :save, resource: Store.new(store_params))
   end

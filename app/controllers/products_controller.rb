@@ -3,6 +3,10 @@ class ProductsController < ApplicationController
     actions_handler(action: :index, resource: Product)
   end
 
+  def show
+    actions_handler(action: :show, resource: product_finder)
+  end
+
   def create
     actions_handler(action: :save, resource: Product.new(product_params))
   end

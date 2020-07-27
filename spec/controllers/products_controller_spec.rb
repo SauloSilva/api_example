@@ -14,6 +14,17 @@ RSpec.describe ProductsController, type: :controller do
     end
   end
 
+  describe 'GET #show' do
+    context "success" do
+      it "returns list of products" do
+        get :show, params: { id: product.id }
+
+        expect(response.status).to eq 200
+        expect(response).to match_response_schema(:product)
+      end
+    end
+  end
+
   describe 'POST #create' do
     context "success" do
       it "returns object has been created" do

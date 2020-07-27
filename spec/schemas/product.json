@@ -8,7 +8,17 @@
       "properties" : {
         "id" : { "type" : "string" },
         "type" : { "type" : "string" },
-        "attributes" : { "type" : "object" }
+        "attributes" : {
+          "type" : "object",
+          "required": ["name", "description", "price", "tax", "shipping"],
+          "properties" : {
+            "name" : { "type" : "string" },
+            "description" : { "type" : "string" },
+            "price" : { "type" : "string" },
+            "tax" : { "type" : "string" },
+            "shipping" : { "type" : "string" }
+          }
+        }
       }
     }
   }
