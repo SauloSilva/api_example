@@ -33,3 +33,5 @@
 
 # Ignora coverage folder
 /coverage/*
+/tmp/*
+/log/*
