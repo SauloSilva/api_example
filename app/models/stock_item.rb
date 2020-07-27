@@ -8,10 +8,12 @@ class StockItem < ApplicationRecord
   validates :product_id, uniqueness: { scope: :store_id }
 
   def increase(qtt)
-    update(quantity: quantity + qtt.to_i.abs)
+    self.quantity += qtt.to_i.abs
+    save
   end
 
   def decrease(qtt)
-    update(quantity: quantity - qtt.to_i.abs)
+    self.quantity -= qtt.to_i.abs
+    save
   end
 end
