@@ -13,6 +13,7 @@ pt-BR:
         price: Preço
         tax: Taxa
         shipping: Taxa de entrega
+        stock_items: produtos no estoque
         created_at: Criado em
         update_at: Atualizado em
 

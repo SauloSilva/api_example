@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_26_165520) do
+ActiveRecord::Schema.define(version: 2020_07_27_054014) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,4 +45,6 @@ ActiveRecord::Schema.define(version: 2020_07_26_165520) do
     t.index ["name"], name: "index_stores_on_name", unique: true
   end
 
+  add_foreign_key "stock_items", "products"
+  add_foreign_key "stock_items", "stores"
 end
