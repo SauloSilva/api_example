@@ -12,6 +12,8 @@ class ApplicationController < ActionController::API
     }.fetch(action, -> { nil }).call
   end
 
+  private
+
   def records_get(resource)
     -> { render_200(resource.page(params[:page])) }
   end
