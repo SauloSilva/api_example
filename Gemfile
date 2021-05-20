@@ -6,7 +6,7 @@ ruby '2.7.1'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.2'
 gem 'pg', '1.2.3'
-gem 'puma', '~> 4.1'
+gem 'puma', '~> 4.3'
 gem 'will_paginate', '~> 3.1.0'
 gem 'active_model_serializers', '0.10.10'
 
